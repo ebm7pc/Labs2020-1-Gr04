@@ -1,5 +1,3 @@
 
-include ':lab3Architecture'
-include ':lab2activities'
-include ':Lab1-UI'
+include ':proyectoFinal'
 rootProject.name = "Labs2020-1-Gr04"
