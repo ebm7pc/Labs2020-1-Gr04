@@ -1,3 +1,4 @@
 
 include ':proyectoFinal'
-rootProject.name = "Labs2020-1-Gr04"
+rootProject.name = "ProyectoFinalCM2020-1"
+//rootProject.name = "Labs2020-1-Gr04"
