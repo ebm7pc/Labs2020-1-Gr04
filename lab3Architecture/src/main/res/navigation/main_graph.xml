@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/placesFragment"
+        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.ui.PlacesFragment"
+        android:label="Lugares"
+        tools:layout="@layout/fragment_places">
+        <action
+            android:id="@+id/action_lugaresFragment_to_detallesLugarFragment"
+            app:destination="@id/detailsPlaceFragment" />
+        <action
+            android:id="@+id/action_lugaresFragment_to_registerSitesFragment"
+            app:destination="@id/registerPlacesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsPlaceFragment"
+        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.ui.DetailsPlaceFragment"
+        android:label="DETALLE LUGARES"
+        tools:layout="@layout/fragment_details_place" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_lugaresFragment"
+            app:destination="@id/placesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPlacesFragment"
+        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.valueObjet.RegisterPlacesFragment"
+        android:label="RegisterSitesFragment"
+        tools:layout="@layout/fragment_register_places"/>
+</navigation>
