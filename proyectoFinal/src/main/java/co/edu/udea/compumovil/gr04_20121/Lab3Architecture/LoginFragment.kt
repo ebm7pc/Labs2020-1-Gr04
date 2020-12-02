@@ -31,9 +31,7 @@ class LoginFragment : Fragment() {
         isRemembered = sharedPreferences.getBoolean("CHECKBOX", false)
 
         if (isRemembered) {
-
             findNavController().navigate(R.id.placesFragment)
-
         }
     }
 
@@ -78,11 +76,7 @@ class LoginFragment : Fragment() {
                                 editor.putString("NAME", userLogin)
                                 editor.putBoolean("CHECKBOX", checked)
                                 editor.apply()
-
                                 Toast.makeText(requireContext(), "Saved", Toast.LENGTH_LONG).show()
-
-
-
                                 findNavController().navigate(R.id.placesFragment)
                             } else {
                                 Toast.makeText(
