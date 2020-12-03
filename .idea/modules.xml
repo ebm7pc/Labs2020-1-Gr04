@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Labs2020-1-Gr04.iml" filepath="$PROJECT_DIR$/.idea/modules/Labs2020-1-Gr04.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lab3Architecture/Labs2020-1-Gr04.proyectoFinal.iml" filepath="$PROJECT_DIR$/.idea/modules/lab3Architecture/Labs2020-1-Gr04.proyectoFinal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Labs2020-1-Gr04.iml" filepath="$PROJECT_DIR$/.idea/modules/Labs2020-1-Gr04.iml" group="Labs2020-1-Gr04" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/proyectoFinal/proyectoFinal.iml" filepath="$PROJECT_DIR$/.idea/modules/proyectoFinal/proyectoFinal.iml" group="Labs2020-1-Gr04/proyectoFinal" />
     </modules>
   </component>
 </project>

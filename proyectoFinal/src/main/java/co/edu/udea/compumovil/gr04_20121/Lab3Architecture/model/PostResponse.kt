@@ -20,10 +20,10 @@ data class PostResponse(
      val temperature: String
 )
 
-fun List<PostResponse>.asCacheModel(): List<Places> {
+fun List<PostResponse>.asCacheModel(): List<Product> {
     return map {
-        Places(
-            idPlaces = it.id,
+        Product(
+            idProduct = it.id,
             name = it.title,
             image = it.image,
             description = it.description,

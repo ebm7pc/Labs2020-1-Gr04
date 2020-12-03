@@ -12,7 +12,7 @@ class MainViewModel(private val repo: Repo) : ViewModel() {
     val fetchPlacesList = liveData(Dispatchers.IO) {
         emit(Resource.Loading())
         try {
-            emit(repo.getPlacesList())
+            emit(repo.getProductList())
         } catch (e: Exception) {
 
         }

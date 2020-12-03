@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
 
         if (isRemembered) {
 
-            findNavController().navigate(R.id.placesFragment)
+            findNavController().navigate(R.id.productFragment)
 
         }
     }
@@ -83,7 +83,7 @@ class LoginFragment : Fragment() {
 
 
 
-                                findNavController().navigate(R.id.placesFragment)
+                                findNavController().navigate(R.id.productFragment)
                             } else {
                                 Toast.makeText(
                                     requireContext(),
