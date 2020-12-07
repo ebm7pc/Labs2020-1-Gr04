@@ -6,34 +6,34 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/placesFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.ui.PlacesFragment"
-        android:label="Lugares"
-        tools:layout="@layout/fragment_places">
+        android:id="@+id/productFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.ui.ProductFragment"
+        android:label="Producto"
+        tools:layout="@layout/fragment_product">
         <action
-            android:id="@+id/action_lugaresFragment_to_detallesLugarFragment"
-            app:destination="@id/detailsPlaceFragment" />
+            android:id="@+id/action_productosFragment_to_detallesProductoFragment"
+            app:destination="@id/detailsProductFragment" />
         <action
-            android:id="@+id/action_lugaresFragment_to_registerSitesFragment"
-            app:destination="@id/registerPlacesFragment" />
+            android:id="@+id/action_productoFragment_to_registerSitesFragment"
+            app:destination="@id/registerProductFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailsPlaceFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.ui.DetailsPlaceFragment"
-        android:label="DETALLE LUGARES"
-        tools:layout="@layout/fragment_details_place" />
+        android:id="@+id/detailsProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.ui.DetailsProductFragment"
+        android:label="DETALLE PRODUCTOS"
+        tools:layout="@layout/fragment_details_product" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.LoginFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_lugaresFragment"
-            app:destination="@id/placesFragment" />
+            android:id="@+id/action_loginFragment_to_productosFragment"
+            app:destination="@id/productFragment" />
     </fragment>
     <fragment
-        android:id="@+id/registerPlacesFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.valueObjet.RegisterPlacesFragment"
+        android:id="@+id/registerProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.valueObjet.RegisterProductFragment"
         android:label="RegisterSitesFragment"
-        tools:layout="@layout/fragment_register_places"/>
+        tools:layout="@layout/fragment_register_product"/>
 </navigation>

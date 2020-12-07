@@ -4,8 +4,7 @@
     <item android:drawable="@drawable/images"/>
     <item>
 
-        <bitmap
-            android:src="@drawable/logo2_2"
+        <bitmap android:src="@drawable/logo2_2"
             android:gravity="center"/>
     </item>
 
