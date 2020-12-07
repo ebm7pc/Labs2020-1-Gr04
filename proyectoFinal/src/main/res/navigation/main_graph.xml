@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/productFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.ui.ProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.ui.ProductFragment"
         android:label="Producto"
         tools:layout="@layout/fragment_product">
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/detailsProductFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.ui.DetailsProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.ui.DetailsProductFragment"
         android:label="DETALLE PRODUCTOS"
         tools:layout="@layout/fragment_details_product" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.LoginFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerProductFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.Lab3Architecture.valueObjet.RegisterProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.valueObjet.RegisterProductFragment"
         android:label="RegisterSitesFragment"
         tools:layout="@layout/fragment_register_product"/>
 </navigation>
