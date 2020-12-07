@@ -7,33 +7,22 @@
 
     <fragment
         android:id="@+id/productFragment"
-        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.ui.ProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.ProductFragment"
         android:label="Producto"
-        tools:layout="@layout/fragment_product">
-        <action
-            android:id="@+id/action_productosFragment_to_detallesProductoFragment"
-            app:destination="@id/detailsProductFragment" />
-        <action
-            android:id="@+id/action_productoFragment_to_registerSitesFragment"
-            app:destination="@id/registerProductFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_product"/>
     <fragment
         android:id="@+id/detailsProductFragment"
-        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.ui.DetailsProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.DetailsProductFragment"
         android:label="DETALLE PRODUCTOS"
         tools:layout="@layout/fragment_details_product" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.LoginFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.LoginFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_loginFragment_to_productosFragment"
-            app:destination="@id/productFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/registerProductFragment"
-        android:name="co.edu.udea.compumovil.gr04_20201.proyecFinal.valueObjet.RegisterProductFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.valueObjet.RegisterProductFragment"
         android:label="RegisterSitesFragment"
         tools:layout="@layout/fragment_register_product"/>
 </navigation>
