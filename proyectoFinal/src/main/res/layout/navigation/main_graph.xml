@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_detalles_lugar" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="co.edu.udea.compumovil.gr04_20121.lab3.LoginFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.lab3.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
         <action
