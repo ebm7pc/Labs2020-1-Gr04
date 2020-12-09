@@ -6,17 +6,35 @@ import android.util.Log
 import android.view.*
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.R
+import co.edu.udea.compumovil.gr04_20201.proyectoFinal.ShoppingList
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.model.Product
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.viewmodel.PostViewModel
 import kotlinx.android.synthetic.main.fragment_product.*
+import kotlinx.android.synthetic.main.fragment_shopping_cart.*
 
-class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
+
+class ShoppingCartFragment : Fragment(),MainAdapter.OnProductClickListener  {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        setHasOptionsMenu(true)
+        return inflater.inflate(R.layout.fragment_shopping_cart, container, false)
+    }
 
     private lateinit var viewModel: PostViewModel
     private lateinit var postAdapter: MainAdapter
@@ -24,45 +42,33 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(PostViewModel::class.java)
-        viewModel.allPosts.observe(viewLifecycleOwner, Observer {
-            postAdapter.updatePostList(it)
-        })
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
-
-        setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_product, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        setupSearchView()
 
-        btn_insert_product.setOnClickListener {
-            findNavController().navigate(R.id.registerProductFragment)
-        }
-        floatingActionCart.setOnClickListener {
-            findNavController().navigate(R.id.shoppingCartFragment)
+        Total1.text = ShoppingList.Singleton.shoppingList.sumBy { it.price.toInt() }.toString()
+        floatingActionDelete.setOnClickListener {
+            ShoppingList.Singleton.shoppingList.clear()
+            postAdapter.updatePostList(ShoppingList.Singleton.shoppingList)
+            Total1.text = "0"
         }
     }
 
     private fun setupRecyclerView() {
-        rv_product.layoutManager = LinearLayoutManager(requireContext())
-        rv_product.addItemDecoration(
+        rv_cartproduct.layoutManager = LinearLayoutManager(requireContext())
+        rv_cartproduct.addItemDecoration(
             DividerItemDecoration(
                 requireContext(),
                 DividerItemDecoration.VERTICAL
             )
         )
         postAdapter = MainAdapter(this as MainAdapter.OnProductClickListener)
-        rv_product.adapter = postAdapter
+        postAdapter.updatePostList(ShoppingList.Singleton.shoppingList)
+        rv_cartproduct.adapter = postAdapter
     }
 
     override fun OnProductClick(product: Product) {
@@ -75,21 +81,6 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
         inflater.inflate(R.menu.menu_post_list, menu)
     }
 
-    private fun setupSearchView(){
-        searchView.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                viewModel.allPosts.observe(viewLifecycleOwner, Observer {
-                    postAdapter.updatePostList(it.filter{product -> product.name.equals(query,true)})
-                })
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
-            }
-
-        })
-    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_refresh -> {

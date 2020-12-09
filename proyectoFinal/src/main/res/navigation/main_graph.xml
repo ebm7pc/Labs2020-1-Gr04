@@ -14,7 +14,11 @@
         android:id="@+id/detailsProductFragment"
         android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.DetailsProductFragment"
         android:label="DETALLE PRODUCTOS"
-        tools:layout="@layout/fragment_details_product" />
+        tools:layout="@layout/fragment_details_product" >
+        <action
+            android:id="@+id/action_detailsProductFragment_to_shoppingCartFragment"
+            app:destination="@id/shoppingCartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.LoginFragment"
@@ -25,4 +29,9 @@
         android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.valueObjet.RegisterProductFragment"
         android:label="RegisterSitesFragment"
         tools:layout="@layout/fragment_register_product"/>
+    <fragment
+        android:id="@+id/shoppingCartFragment"
+        android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.ShoppingCartFragment"
+        android:label="fragment_shopping_cart"
+        tools:layout="@layout/fragment_shopping_cart" />
 </navigation>

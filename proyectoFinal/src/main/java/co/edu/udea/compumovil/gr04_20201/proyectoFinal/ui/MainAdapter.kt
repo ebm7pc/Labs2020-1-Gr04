@@ -38,6 +38,7 @@ class MainAdapter(
             Glide.with(itemView.context).load(item.image).centerCrop().into(itemView.img_product)
             itemView.txt_title.text = item.name
             itemView.txt_description.text = item.description
+            itemView.txt_price.text=item.price
             itemView.setOnClickListener { itemClickLister.OnProductClick(item)}
         }
 

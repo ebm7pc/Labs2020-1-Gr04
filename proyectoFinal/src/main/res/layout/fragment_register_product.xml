@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_et" />
 
     <EditText
-        android:id="@+id/temperature_et"
+        android:id="@+id/price_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -86,5 +86,5 @@
         android:layout_marginRight="36dp"
         android:text="SAVE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperature_et" />
+        app:layout_constraintTop_toBottomOf="@+id/price_et" />
 </androidx.constraintlayout.widget.ConstraintLayout>
