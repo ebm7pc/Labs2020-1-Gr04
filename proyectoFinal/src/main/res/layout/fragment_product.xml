@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,6 +8,8 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".ui.ProductFragment">
+
+
 
 
     <SearchView
@@ -21,6 +24,8 @@
         android:layout_marginBottom="0dp"
         android:layout_toEndOf="@+id/NameIn"
         android:layout_toRightOf="@+id/NameIn" />
+
+
 
     <TextView
         android:id="@+id/NameIn"
@@ -47,6 +52,20 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp"
         android:src="@drawable/ic_baseline_add_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/rv_product"
+        android:layout_gravity="end"
+        android:layout_marginEnd="247dp"
+        android:layout_marginRight="247dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toStartOf="@+id/btn_insert_product"
+        android:layout_toLeftOf="@+id/btn_insert_product"
+        android:clickable="true"
+        android:src="@drawable/shopping_cart_24px" />
 
     <RelativeLayout
         android:id="@+id/progressBar"

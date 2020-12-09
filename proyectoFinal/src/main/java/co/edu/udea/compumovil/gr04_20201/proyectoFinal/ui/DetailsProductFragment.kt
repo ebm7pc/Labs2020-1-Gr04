@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.R
+import co.edu.udea.compumovil.gr04_20201.proyectoFinal.ShoppingList
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.model.Product
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_details_product.*
@@ -36,18 +37,9 @@ class DetailsProductFragment : Fragment() {
         txt_description.text = product.description
         txt_price.text = product.price
 
-        bte_localization.setOnClickListener {
-            val gmmIntentUri = Uri.parse("geo:0,0?q=city+" + product.name)
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            mapIntent.setPackage("com.google.android.apps.maps")
-            startActivity(mapIntent)
+        bte_addcart.setOnClickListener {
+            ShoppingList.Singleton.shoppingList.add(product)
         }
-        val url =
-            "https://www.google.com/search?ei=6IOLX8D8HIOG5wKfoYXwDA&q=Atracciones+destacadas+en " + product.name
-        bte_places_recommended.setOnClickListener {
-            val gmmIntentUri = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            startActivity(intent)
-        }
+
     }
 }
