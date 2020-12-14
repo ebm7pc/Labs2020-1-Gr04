@@ -38,7 +38,7 @@ RegisterProductFragment : Fragment() {
             val name = name_et.text.toString()
             val image = img_et.text.toString()
             val description = description_et.text.toString()
-            val temperature = temperature_et.text.toString()
+            val price = price_et.text.toString()
 
             if (name_et.text.isEmpty() || img_et.text.isEmpty() || description_et.text.isEmpty()) {
                 Toast.makeText(
@@ -47,7 +47,7 @@ RegisterProductFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                val productos = Product(name, image, description, temperature)
+                val productos = Product(name, image, description, price)
                 Toast.makeText(requireContext(), "Nuevo registro guardado", Toast.LENGTH_SHORT)
                     .show()
 

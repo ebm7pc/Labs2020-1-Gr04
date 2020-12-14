@@ -17,7 +17,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="Name Sitio"
+        android:hint="Nombre Producto"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         android:layout_marginRight="16dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Descrption"
+        android:hint="Descripción"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_et" />
 
     <EditText
-        android:id="@+id/temperature_et"
+        android:id="@+id/price_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -69,7 +69,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="Temperature"
+        android:hint="Precio"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -86,5 +86,5 @@
         android:layout_marginRight="36dp"
         android:text="SAVE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperature_et" />
+        app:layout_constraintTop_toBottomOf="@+id/price_et" />
 </androidx.constraintlayout.widget.ConstraintLayout>

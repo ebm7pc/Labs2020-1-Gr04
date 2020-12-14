@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +8,6 @@
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".ui.ProductFragment">
-
 
     <SearchView
         android:id="@+id/searchView"
@@ -18,9 +18,14 @@
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
         android:layout_marginBottom="0dp"
+        android:layout_toStartOf="@+id/floatingActionCart"
+        android:layout_toLeftOf="@+id/floatingActionCart"
         android:layout_toEndOf="@+id/NameIn"
-        android:layout_toRightOf="@+id/NameIn" />
+        android:layout_toRightOf="@+id/NameIn"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/NameIn"
@@ -63,12 +68,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_product"
-        android:layout_width="385dp"
-        android:layout_height="686dp"
+        android:layout_width="380dp"
+        android:layout_height="553dp"
 
         android:layout_below="@+id/NameIn"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="31dp"
-        android:layout_marginBottom="17dp" />
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="43dp" />
 
 </RelativeLayout>

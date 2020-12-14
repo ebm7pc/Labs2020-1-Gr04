@@ -3,11 +3,12 @@ package co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.R
+import co.edu.udea.compumovil.gr04_20201.proyectoFinal.ShoppingList
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.model.Product
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.fragment_details_product.*
@@ -26,6 +27,8 @@ class DetailsProductFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
+
         return inflater.inflate(R.layout.fragment_details_product, container, false)
     }
 
@@ -36,18 +39,25 @@ class DetailsProductFragment : Fragment() {
         txt_description.text = product.description
         txt_price.text = product.price
 
-        bte_localization.setOnClickListener {
-            val gmmIntentUri = Uri.parse("geo:0,0?q=city+" + product.name)
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            mapIntent.setPackage("com.google.android.apps.maps")
-            startActivity(mapIntent)
+        bte_addcart.setOnClickListener {
+            ShoppingList.Singleton.shoppingList.add(product)
         }
-        val url =
-            "https://www.google.com/search?ei=6IOLX8D8HIOG5wKfoYXwDA&q=Atracciones+destacadas+en " + product.name
-        bte_places_recommended.setOnClickListener {
-            val gmmIntentUri = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            startActivity(intent)
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_cart, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.mnCart) {
+            goToCart()
         }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun goToCart() {
+        findNavController().navigate(R.id.shoppingCartFragment)
     }
 }
