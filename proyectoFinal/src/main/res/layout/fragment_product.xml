@@ -18,8 +18,8 @@
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginRight="61dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginRight="66dp"
         android:layout_marginBottom="0dp"
         android:layout_toStartOf="@+id/floatingActionCart"
         android:layout_toLeftOf="@+id/floatingActionCart"
@@ -55,12 +55,10 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionCart"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/rv_product"
+        android:layout_height="53dp"
         android:layout_gravity="end"
-        android:layout_marginEnd="-57dp"
-        android:layout_marginRight="-57dp"
-        android:layout_marginBottom="554dp"
+        android:layout_marginEnd="-59dp"
+        android:layout_marginRight="-59dp"
         android:layout_toStartOf="@+id/btn_insert_product"
         android:layout_toLeftOf="@+id/btn_insert_product"
         android:clickable="true"
@@ -81,12 +79,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_product"
-        android:layout_width="385dp"
-        android:layout_height="686dp"
+        android:layout_width="380dp"
+        android:layout_height="553dp"
 
         android:layout_below="@+id/NameIn"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="31dp"
-        android:layout_marginBottom="17dp" />
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="43dp" />
 
 </RelativeLayout>
