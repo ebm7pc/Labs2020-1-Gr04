@@ -76,19 +76,4 @@ class ShoppingCartFragment : Fragment(),MainAdapter.OnProductClickListener  {
         bundle.putParcelable("productTable", product)
         findNavController().navigate(R.id.detailsProductFragment, bundle)
     }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_post_list, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_refresh -> {
-                Log.d("ProductFragment", "Action refresh")
-                viewModel.requestPosts()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
 }

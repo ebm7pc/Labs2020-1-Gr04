@@ -3,10 +3,10 @@ package co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.R
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.ShoppingList
 import co.edu.udea.compumovil.gr04_20201.proyectoFinal.model.Product
@@ -27,6 +27,8 @@ class DetailsProductFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
+
         return inflater.inflate(R.layout.fragment_details_product, container, false)
     }
 
@@ -41,5 +43,21 @@ class DetailsProductFragment : Fragment() {
             ShoppingList.Singleton.shoppingList.add(product)
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_cart, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.mnCart) {
+            goToCart()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun goToCart() {
+        findNavController().navigate(R.id.shoppingCartFragment)
     }
 }

@@ -24,7 +24,8 @@
         android:layout_toStartOf="@+id/floatingActionCart"
         android:layout_toLeftOf="@+id/floatingActionCart"
         android:layout_toEndOf="@+id/NameIn"
-        android:layout_toRightOf="@+id/NameIn" />
+        android:layout_toRightOf="@+id/NameIn"
+        tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/NameIn"
@@ -51,18 +52,6 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp"
         android:src="@drawable/ic_baseline_add_24" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionCart"
-        android:layout_width="wrap_content"
-        android:layout_height="53dp"
-        android:layout_gravity="end"
-        android:layout_marginEnd="-59dp"
-        android:layout_marginRight="-59dp"
-        android:layout_toStartOf="@+id/btn_insert_product"
-        android:layout_toLeftOf="@+id/btn_insert_product"
-        android:clickable="true"
-        android:src="@drawable/shopping_cart_24px" />
 
     <RelativeLayout
         android:id="@+id/progressBar"

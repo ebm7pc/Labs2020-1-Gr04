@@ -48,9 +48,7 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
         btn_insert_product.setOnClickListener {
             findNavController().navigate(R.id.registerProductFragment)
         }
-        floatingActionCart.setOnClickListener {
-            findNavController().navigate(R.id.shoppingCartFragment)
-        }
+
     }
 
     private fun setupRecyclerView() {
@@ -73,6 +71,7 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_post_list, menu)
+        inflater.inflate(R.menu.menu_cart, menu)
     }
 
     private fun setupSearchView(){
@@ -91,6 +90,12 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
         })
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+        if (id == R.id.mnCart) {
+            goToCart()
+        }
+        return super.onOptionsItemSelected(item)
+
         return when (item.itemId) {
             R.id.action_refresh -> {
                 Log.d("ProductFragment", "Action refresh")
@@ -100,4 +105,7 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    private fun goToCart() {
+        findNavController().navigate(R.id.shoppingCartFragment)    }
 }

@@ -27,11 +27,11 @@
     <fragment
         android:id="@+id/registerProductFragment"
         android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.valueObjet.RegisterProductFragment"
-        android:label="RegisterSitesFragment"
-        tools:layout="@layout/fragment_register_product"/>
+        android:label="Nuevo Producto"
+        tools:layout="@layout/fragment_register_product" />
     <fragment
         android:id="@+id/shoppingCartFragment"
         android:name="co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.ShoppingCartFragment"
-        android:label="fragment_shopping_cart"
+        android:label="Shopping Cart"
         tools:layout="@layout/fragment_shopping_cart" />
 </navigation>

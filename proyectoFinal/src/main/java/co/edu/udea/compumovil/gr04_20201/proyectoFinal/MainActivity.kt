@@ -7,7 +7,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
+import co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui.ShoppingCartFragment
 
 class MainActivity : AppCompatActivity() {
 
