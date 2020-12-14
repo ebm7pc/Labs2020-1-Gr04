@@ -1,6 +1,8 @@
 package co.edu.udea.compumovil.gr04_20201.proyectoFinal.ui
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -55,6 +57,13 @@ class ShoppingCartFragment : Fragment(),MainAdapter.OnProductClickListener  {
             ShoppingList.Singleton.shoppingList.clear()
             postAdapter.updatePostList(ShoppingList.Singleton.shoppingList)
             Total1.text = "0"
+        }
+        val url =
+            "https://www.pse.com.co/persona?utm_source=omd_digital&utm_medium=google_search&utm_term=categoria&utm_content=keywords&utm_campaign=ach_pse_12_trafico_search_cpc&gclid=CjwKCAiAt9z-BRBCEiwA_bWv-C4dVjA92nSPbeY_Hidv4C-m8ZhAUlGq0UHNyzkZE1BXQzfyeX94JxoCReAQAvD_BwE "
+        btn_pagos.setOnClickListener {
+            val gmmIntentUri = Uri.parse(url)
+            val intent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            startActivity(intent)
         }
     }
 
