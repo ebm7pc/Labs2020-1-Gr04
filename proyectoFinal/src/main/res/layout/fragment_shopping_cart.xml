@@ -76,4 +76,17 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_pagos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_rounded"
+        android:text="Pagar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionDelete"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
