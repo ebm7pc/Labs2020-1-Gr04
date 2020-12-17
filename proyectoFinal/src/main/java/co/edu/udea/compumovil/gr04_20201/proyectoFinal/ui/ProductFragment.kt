@@ -94,7 +94,6 @@ class ProductFragment : Fragment(), MainAdapter.OnProductClickListener {
         if (id == R.id.mnCart) {
             goToCart()
         }
-        return super.onOptionsItemSelected(item)
 
         return when (item.itemId) {
             R.id.action_refresh -> {
